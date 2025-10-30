@@ -1,0 +1,28 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "Josh Quinlan - British Audio Producer, Baritone & Conductor"
+copyright = "© Josh Quinlan - <a href='https://github.com/DonQuinleone/jqsite' target='_blank'>View source on GitHub</a>"
+
+[params]
+  dateFormat = "2 January, 2006"
+  mainSections = ["discography"]
+  description = "British Audio Producer, Baritone & Conductor"
+
+[params.author]
+  name = "Josh Quinlan"
+  image = "img/author2.png"
+  headline = "British Audio Producer, Baritone & Conductor"
+  bio = "British Audio Producer, Baritone & Conductor"
+  links = [
+    { link = "https://joshquinlan.co.uk/" },
+    { discogs = "https://www.discogs.com/artist/15314391-Josh-Quinlan-2" },
+    { instagram = "https://instagram.com/JoshNQuinlan" },
+    { x-twitter = "https://twitter.com/JoshNQuinlan" },
+    { linkedin = "https://linkedin.com/in/joshnquinlan" },
+    { github = "https://github.com/DonQuinleone" },
+    { email = "mailto:josh@quinlan.cloud" },
+  ]
+

@@ -1,0 +1,9 @@
+/* Space after buttons */
+a[href][role="button"] {
+  margin-right: 10px;
+}
+
+/* Space after icon in buttons */
+a[href][role="button"] .icon {
+  margin-right: 0.5em;
+}
