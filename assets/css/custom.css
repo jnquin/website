@@ -7,3 +7,147 @@ a[href][role="button"] {
 a[href][role="button"] .icon {
   margin-right: 0.5em;
 }
+
+/* --- Contact form (content/contact.md) --- */
+form.contact-form {
+  margin-top: 1.5rem;
+  max-width: 42rem;
+}
+
+form.contact-form .form-field {
+  margin-top: 1rem;
+}
+
+form.contact-form .form-field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgb(var(--color-neutral-700));
+}
+form.contact-form .form-field label:is(.dark *) {
+  color: rgb(var(--color-neutral-300));
+}
+
+form.contact-form input[type="email"],
+form.contact-form input[type="text"],
+form.contact-form input[type="tel"],
+form.contact-form input[type="url"],
+form.contact-form textarea {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem; /* ~rounded-md */
+  border: 1px solid rgb(var(--color-neutral-300));
+  background: rgb(var(--color-neutral));
+  padding: 0.65rem 0.85rem;
+  line-height: 1.5;
+  color: rgb(var(--color-neutral-900));
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+form.contact-form input[type="email"]:is(.dark *),
+form.contact-form input[type="text"]:is(.dark *),
+form.contact-form input[type="tel"]:is(.dark *),
+form.contact-form input[type="url"]:is(.dark *),
+form.contact-form textarea:is(.dark *) {
+  border-color: rgb(var(--color-neutral-700));
+  background: rgb(var(--color-neutral-800));
+  color: rgb(var(--color-neutral-100));
+}
+
+form.contact-form input[type="email"]::placeholder,
+form.contact-form input[type="text"]::placeholder,
+form.contact-form input[type="tel"]::placeholder,
+form.contact-form input[type="url"]::placeholder,
+form.contact-form textarea::placeholder {
+  color: rgb(var(--color-neutral-500));
+}
+form.contact-form input[type="email"]::placeholder:is(.dark *),
+form.contact-form input[type="text"]::placeholder:is(.dark *),
+form.contact-form input[type="tel"]::placeholder:is(.dark *),
+form.contact-form input[type="url"]::placeholder:is(.dark *),
+form.contact-form textarea::placeholder:is(.dark *) {
+  color: rgb(var(--color-neutral-400));
+}
+
+form.contact-form input[type="email"]:hover:not(:focus),
+form.contact-form input[type="text"]:hover:not(:focus),
+form.contact-form input[type="tel"]:hover:not(:focus),
+form.contact-form input[type="url"]:hover:not(:focus),
+form.contact-form textarea:hover:not(:focus) {
+  border-color: rgb(var(--color-neutral-400));
+}
+form.contact-form input[type="email"]:hover:not(:focus):is(.dark *),
+form.contact-form input[type="text"]:hover:not(:focus):is(.dark *),
+form.contact-form input[type="tel"]:hover:not(:focus):is(.dark *),
+form.contact-form input[type="url"]:hover:not(:focus):is(.dark *),
+form.contact-form textarea:hover:not(:focus):is(.dark *) {
+  border-color: rgb(var(--color-neutral-600));
+}
+
+form.contact-form input[type="email"]:focus,
+form.contact-form input[type="text"]:focus,
+form.contact-form input[type="tel"]:focus,
+form.contact-form input[type="url"]:focus,
+form.contact-form textarea:focus {
+  outline: none;
+  border-color: rgb(var(--color-primary-500));
+  box-shadow: 0 0 0 3px rgb(var(--color-primary-500) / 0.25);
+}
+
+form.contact-form input[type="email"]:focus:hover,
+form.contact-form input[type="text"]:focus:hover,
+form.contact-form input[type="tel"]:focus:hover,
+form.contact-form input[type="url"]:focus:hover,
+form.contact-form textarea:focus:hover {
+  border-color: rgb(var(--color-primary-500));
+}
+
+/* Submit button: match Congo button shortcode styling */
+form.contact-form .btn-primary,
+form.contact-form button[type="submit"] {
+  display: inline-block;
+  margin-top: 1.25rem;
+  border-radius: 0.375rem; /* ~rounded-md */
+  background: rgb(var(--color-primary-600));
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+  color: rgb(var(--color-neutral));
+}
+form.contact-form .btn-primary:is(.dark *),
+form.contact-form button[type="submit"]:is(.dark *) {
+  background: rgb(var(--color-primary-800));
+}
+form.contact-form .btn-primary:hover,
+form.contact-form button[type="submit"]:hover {
+  background: rgb(var(--color-primary-500));
+}
+form.contact-form .btn-primary:hover:is(.dark *),
+form.contact-form button[type="submit"]:hover:is(.dark *) {
+  background: rgb(var(--color-primary-700));
+}
+form.contact-form .btn-primary:focus-visible,
+form.contact-form button[type="submit"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(var(--color-primary-500) / 0.35);
+}
+form.contact-form .btn-primary:disabled,
+form.contact-form button[type="submit"]:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+form.contact-form .form-status {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: rgb(var(--color-neutral-600));
+}
+form.contact-form .form-status:is(.dark *) {
+  color: rgb(var(--color-neutral-400));
+}
+form.contact-form .form-status:empty {
+  display: none;
+}

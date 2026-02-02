@@ -1,11 +1,11 @@
 ---
-title: "Projects"
+title: "Testimonials"
 date: 2020-04-19
 lastmod: 2025-07-04
 draft: false
 showAuthor: false
 showTableOfContents: true
-slug: "projects"
+slug: "testimonials"
 ---
 
 I greatly enjoy the opportunities and varied experiences that a portfolio career offers. No week will ever look quite the same, and I have the fantastic opportunity to meet so many wonderful, talented people along the way.
@@ -16,7 +16,7 @@ I greatly enjoy the opportunities and varied experiences that a portfolio career
 
 You can find a catalogue of the recordings that I have worked on in my Discography.
 
-{{< button href="/discography" target="_self" >}}
+{{< button type="submit" >}}
 {{< icon "cd" >}} View Discography
 {{< /button >}}
 

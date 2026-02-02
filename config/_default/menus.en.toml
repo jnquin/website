@@ -21,13 +21,13 @@
   weight = 20
 
 [[main]]
-  name = "Projects"
-  pageRef = "projects"
+  name = "Discography"
+  pageRef = "discography"
   weight = 30
 
 [[main]]
-  name = "Articles"
-  pageRef = "posts"
+  name = "Testimonials"
+  pageRef = "testimonials"
   weight = 40
 
 [[main]]
@@ -45,3 +45,8 @@
   name = "Client Resources"
   pageRef = "clients"
   weight = 10
+
+[[footer]]
+  name = "Articles"
+  pageRef = "posts"
+  weight = 20
