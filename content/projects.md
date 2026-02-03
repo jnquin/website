@@ -1,14 +1,12 @@
 ---
-title: "Testimonials"
+title: "Projects"
 date: 2020-04-19
-lastmod: 2025-07-04
+lastmod: 2026-02-02
 draft: false
 showAuthor: false
 showTableOfContents: true
-slug: "testimonials"
+slug: "projects"
 ---
-
-I greatly enjoy the opportunities and varied experiences that a portfolio career offers. No week will ever look quite the same, and I have the fantastic opportunity to meet so many wonderful, talented people along the way.
 
 ## Previous Work
 
@@ -35,14 +33,11 @@ Below you can find a playlist comprising a varied selection of the tracks that I
 
 ### Scores
 
-I will be happy to provide samples of my engraving work on request. Please contact me if this is something that you'd be interested in.
-
-Soon, I will be publishing a selection of sample scores on my website for your perusal.
-
+I would be happy to provide samples of my engraving work on request. Please contact me if this is something that you'd be interested in.
 
 ## Testimonials
 
-Here is a short selection of testimonials left by a few of my clients:
+Here is a compilation of testimonials left by a few of my clients:
 
 > If you are looking for professionalism, enthusiasm and proficiency in the curation of your music project, look no further than Josh Quinlan!
 > Josh has already amassed a wealth of experience as a music engraver, sound recordist and singer in the music industry. With this experience comes a passion and determination to ensure the highest quality, not only with the end result but in the whole process.
@@ -61,17 +56,19 @@ Here is a short selection of testimonials left by a few of my clients:
 
 ## Recent Clients
 
-I count myself incredibly fortunate to have worked with some truly amazing individuals and organisations. More recent working relationships have included projects with:
+I count myself incredibly fortunate to have worked with some truly amazing individuals and organisations. Recent working relationships have included projects with:
 
 * BBC Singers
 * BBC Television
 * Ben Parry
 * Boston Pops Orchestra
+* Britten Sinfonia
 * English Chamber Orchestra
 * Gabrieli Consort & Players
 * Joanna Forbes L'Estrange & Alexander L'Estrange
 * Jo Harris
 * Kristina Arakelyan
+* Lincoln Cathedral
 * London Youth Choirs
 * National Youth Choir
 * NMC Recordings
@@ -79,6 +76,7 @@ I count myself incredibly fortunate to have worked with some truly amazing indiv
 * Ralph Allwood MBE
 * Salisbury Cathedral
 * Siglo de Oro
+* St. Catharine's College, Cambridge
 * The Swingles
 * Trinity College London
 * Wells Cathedral Choir

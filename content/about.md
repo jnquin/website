@@ -1,15 +1,17 @@
 ---
 title: "About"
 date: 2016-07-21
-lastmod: 2025-11-06
+lastmod: 2026-02-02
 draft: false
 slug: "about"
 tags: ["about", "biog"]
 ---
 
-Josh Quinlan is a British audio producer & baritone. He maintains a busy schedule of freelance recording and performance work, and runs both [Endelium Records](https://endelium.com) (an independent classical record label and music distribution company) and National Youth Choir's in-house record label, [National Youth Choir Recordings](https://www.nationalyouthchoir.org.uk/recordings).
+Driven by a belief that great music-making is built on collaboration, clarity, and trust, Josh Quinlan is an audio producer, baritone, and conductor working across the UK, specialising in the performance and recording of contemporary choral music. With extensive experience as a performer, he has appeared at events including the BBC Proms, Royal Variety Performance and the Ryedale Festival. This, alongside a background in technology, leads to his meticulous, solutions-focused approach to every project, enabling artists to realise ambitious creative visions. He maintains a busy and varied performing schedule, working both as a soloist and with leading professional ensembles.
 
-He specialises in working with choirs, vocal ensembles, and soloists, with a particular passion for recording new music. His production style is defined by clarity, depth, and a naturalistic sound that captures the emotional immediacy of performance while preserving the acoustic integrity of the space. He is also a firm believer in artist-centred sessions - creating a friendly, positive environment where creativity, collaboration and enjoyment is allowed to flourish. As a performer-producer, he brings a rare dual perspective to the studio, enabling him to communicate with artists effectively and support them in achieving recordings of exceptional nuance and quality.
+Recent collaborations include projects with the National Youth Choir, BBC Singers, Gabrieli Consort, The Swingles, Ralph Allwood, Ellie Slorach and Jennifer Johnston.
+
+Josh is proud to offer label management and record distribution services to independent classical labels, artists and ensembles, ranging from schools and universities to cathedrals and orchestras. Registered blind since birth, he is also committed to widening access to classical music, particularly for disabled musicians and audiences.
 
 Josh was born with a rare condition called Oculocutaneous Albinism, and has been registered blind since birth. He first trained at the [Royal Northern College of Music](https://rncm.ac.uk)’s Junior Department, studying Singing, Conducting, Composition, Clarinet (with a focus on Bass Clarinet), and Advanced Musicology. During his time there, he received several awards for Composition and was honoured with the Percy Welton Prize for Academic Music. He went on to read Music at the [University of York](https://york.ac.uk), graduating with First-Class Honours in 2021.
 

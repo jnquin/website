@@ -1,7 +1,7 @@
 ---
 title: "Services"
 date: 2020-04-19
-lastmod: 2025-01-26
+lastmod: 2026-02-02
 draft: false
 showAuthor: false
 showTableOfContents: true
@@ -9,29 +9,41 @@ slug: "services"
 tags: ["services"]
 ---
 
-I am always happy to discuss potential projects with clients, and can come up with custom solutions as needed. Contact me to discuss your requirements.
+I am always thrilled to hear from people and organisations that are interested in collaborating on something exciting.
 
-My most popular services include:
+Below you can find a non-exhaustive list of the services that I offer, but if you are looking for something a little bit different please do get in touch and we can discuss your requirements.
 
-## Audio & Video Services
+## Recording Services
 
 * Producing recording sessions
-* Managing and planning productions from concept through to delivery
-* Booking artists and production staff
-* Record distribution through [Endelium](https://endelium.com)
-* Editing audio and video projects
-* Location recording
+* Project management, from initial conception through to final delivery
+* Post-production coordination
+* Quality assurance
+* Record distribution via [Endelium](https://endelium.com)
+* Label management, including rights, royalties and metadata management for a large back catalogue, along with general support, via [Endelium](https://endelium.com)
+* Audio editing
+* Asset preparation for digital and physical distribution
+* Location recording for live events
+* Video shot-calling, with or without scores
+* Video editing
 * Curating learning, guide and click tracks
 
-I have particular expertise in working with choirs and youth ensembles, though I deeply enjoy collaborating with ensembles of all kinds!
+My particular areas of expertise, informed by my own performance practice, include:
 
-## Singing & Performance Direction
+* Choral music
+* New music
+* Youth ensembles
+* Chamber music
 
-* Solo vocal performance (full solo recital, oratorio, opera, etc.)
+However, I have extensive experience in working with ensembles of all kinds and sizes.
+
+## Performance
+
 * Ensemble vocal performance (consort, choral, etc.)
+* Solo vocal performance (oratio, concert, recital, etc.)
 * 1-to-1 vocal coaching
-* Group vocal coaching, including with choirs or sections therein
-* Conducting concerts, rehearsals, recording sessions, and other events
+* Group vocal coaching, including with choirs or parts thereof
+* Conducting, in both live and recorded scenarios
 
 ## Sheet Music Preparation
 
@@ -50,8 +62,8 @@ I have particular expertise in working with choirs and youth ensembles, though I
 * Showcalling
 * Technical consultation (audio, video and lighting)
 
-## Technical Services
+## IT Services
 
-* Website, e-mail, application and custom hosting solutions
+* Website, e-mail, application, and custom hosting solutions
 * System administration (including web servers, DNS, e-mail, reverse proxies, HA, cloud orchestration, etc.)
 * Software development (websites, custom applications, CI/CO workflows, scripts, etc.)

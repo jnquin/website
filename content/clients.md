@@ -8,4 +8,3 @@ slug: "clients"
 ---
 
 * [View Help Guides](help-guides)
-* [Secure file upload](https://athena.quinlan.cloud/s/JoshQuinlanFileDrop)
