@@ -76,7 +76,7 @@ I count myself incredibly fortunate to have worked with some truly amazing indiv
 * Ralph Allwood MBE
 * Salisbury Cathedral
 * Siglo de Oro
-* St. Catharine's College, Cambridge
 * The Swingles
 * Trinity College London
+* University of Cambridge
 * Wells Cathedral Choir
