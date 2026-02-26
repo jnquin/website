@@ -7,4 +7,6 @@ If you are looking for professionalism, enthusiasm and proficiency in the curati
 Josh’s highly organised production skills, clear communication, and positive and engaging approach to working relationships have been a huge asset to the multiple projects I have worked on with him. ... I felt confident that I was in safe hands!<br>
 ~ **Jamie Wright (Baritone, The Swingles)**
 
+[Endelium Records](https://endelium.com) | [NYC Recordings](https://www.nationalyouthchoir.org.uk/recordings)
+
 <hr>

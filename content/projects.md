@@ -14,7 +14,7 @@ slug: "projects"
 
 You can find a catalogue of the recordings that I have worked on in my Discography.
 
-{{< button type="submit" >}}
+{{< button href="/discography" >}}
 {{< icon "cd" >}} View Discography
 {{< /button >}}
 
