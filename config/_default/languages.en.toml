@@ -1,3 +1,4 @@
+[languages.en]
 languageCode = "en"
 languageName = "English"
 languageDirection = "ltr"
@@ -21,4 +22,3 @@ copyright = "© Josh Quinlan"
     { instagram = "https://instagram.com/JoshNQuinlan" },
     { email = "mailto:hello@joshquinlan.co.uk" },
   ]
-
