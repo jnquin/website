@@ -15,7 +15,7 @@ artists:
     display: "National Youth Choir Fellowship Ensemble"
   - slug: "emily-dickens"
     role: "Conductor"
-artist_slugs: ["national-youth-choir", "nicholas-chalmers", "emily-dickens"]
+artist_slugs: ["national-youth-choir", "nicholas-chalmers", "emily-dickens", "ben-parry"]
 staff:
   - slug: "david-jones"
     role: "Recording Engineer & Mastering"

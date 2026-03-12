@@ -20,7 +20,9 @@
     </div>
   </section>
   {{ if .Data.Pages }}
-    {{ $pageGroups := .Pages.GroupByDate "2006" }}
+    {{/* Use section order (matches homepage/pagination); GroupByDate reorders within groups */}}
+    {{ $sectionPages := .Pages }}
+    {{ $pageGroups := $sectionPages.GroupByDate "2006" }}
     {{/* Year jump links - like TOC - with Grid/List toggle right-aligned */}}
     <nav class="discography-year-nav" aria-label="Jump to year">
       <div class="discography-year-links">
@@ -55,7 +57,8 @@
         <h2 id="year-{{ .Key }}" class="discography-year-heading mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">{{ .Key }}</h2>
         <hr class="w-36 border-dotted border-neutral-400" />
         <div class="discography-grid mt-6">
-          {{ range .Pages }}
+          {{ $year := int .Key }}
+          {{ range where $sectionPages "Date.Year" $year }}
             {{ partial "discography-card.html" . }}
           {{ end }}
         </div>
@@ -66,7 +69,8 @@
       {{ range $pageGroups }}
         <h2 id="year-{{ .Key }}-list" class="discography-year-heading mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">{{ .Key }}</h2>
         <hr class="w-36 border-dotted border-neutral-400" />
-        {{ range .Pages }}
+        {{ $year := int .Key }}
+        {{ range where $sectionPages "Date.Year" $year }}
           {{ partial "article-link.html" . }}
         {{ end }}
       {{ end }}

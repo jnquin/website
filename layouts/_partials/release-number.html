@@ -1,5 +1,6 @@
-{{/* Chronological release number #JQ-#### */}}
-{{- $sorted := sort (where .Site.RegularPages "Type" "discography") ".Date" }}
+{{/* Chronological release number #JQ-#### - sort by Date, then LinkTitle desc for same-date tie-break (matches section order) */}}
+{{- $pages := where .Site.RegularPages "Type" "discography" }}
+{{- $sorted := sort (sort $pages ".LinkTitle" "desc") ".Date" }}
 {{- $scratch := newScratch }}
 {{- $scratch.Set "idx" 0 }}
 {{- range $i, $p := $sorted }}
