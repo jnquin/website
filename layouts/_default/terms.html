@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <header>
+    {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+    <div class="min-w-0">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ if eq .Data.Singular "staff" }}Production Staff{{ else }}{{ .Title }}{{ end }}</h1>
+      {{ with .Content }}
+        <section class="prose mt-4 dark:prose-invert">
+          {{ . | emojify }}
+        </section>
+      {{ end }}
+    </div>
+  </header>
+  {{ if .Data.Terms }}
+    <section class="mt-8">
+      <ul class="list-none p-0 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ range .Data.Terms.Alphabetical }}
+          <li>
+            <a href="{{ .Page.Permalink }}" class="block rounded-lg border border-neutral-200 px-4 py-3 transition-colors hover:border-primary-500 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-800 dark:hover:border-primary-500">
+              <span class="font-medium text-neutral-900 dark:text-neutral">{{ .Page.Params.title | default .Page.Title }}</span>
+              <span class="ml-2 text-sm text-neutral-500 dark:text-neutral-400">({{ .Count }} {{ if eq .Count 1 }}release{{ else }}releases{{ end }})</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ else }}
+    <section class="prose mt-10 dark:prose-invert">
+      <p class="border-t py-8">
+        <em>{{ i18n "list.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}
+{{ end }}

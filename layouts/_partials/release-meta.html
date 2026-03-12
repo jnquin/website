@@ -1,0 +1,31 @@
+{{/* Format: [First artist] Released on [Label] [Date YYYY-MM-DD] */}}
+{{- $p := . }}
+{{- $firstArtist := "" }}
+{{- $artistCredits := $p.Params.artists }}
+{{- $artistSlugs := $p.Params.artist_slugs }}
+{{- $firstSlug := "" }}
+{{- if $artistCredits }}
+  {{- $first := index $artistCredits 0 }}
+  {{- $firstSlug = $first.slug }}
+  {{- $display := $first.display | default "" }}
+  {{- if $display }}
+    {{- $firstArtist = $display }}
+  {{- end }}
+{{- else if $artistSlugs }}
+  {{- $firstSlug = index $artistSlugs 0 }}
+{{- end }}
+{{- if not $firstArtist }}
+  {{- with $firstSlug }}
+    {{- with $p.Site.GetPage (printf "/artists/%s" .) }}{{ $firstArtist = .Params.title | default .Title }}{{ else }}{{ $firstArtist = . }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- $label := $p.Params.label | default "" }}
+{{- $date := "" }}
+{{- with $p.Date }}
+  {{- $date = .Format "2006-01-02" }}
+{{- end }}
+{{- $parts := slice }}
+{{- if $firstArtist }}{{ $parts = $parts | append $firstArtist }}{{ end }}
+{{- if $label }}{{ $parts = $parts | append (printf "Released on %s" $label) }}{{ end }}
+{{- if $date }}{{ $parts = $parts | append $date }}{{ end }}
+{{ delimit $parts "<br/>" | safeHTML }}

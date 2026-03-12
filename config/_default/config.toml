@@ -8,8 +8,32 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 summaryLength = 0
 
+# Taxonomies for discography filtering
+[taxonomies]
+  artists = "artist_slugs"
+  staff = "staff_slugs"
+
 [pagination]
   pagerSize = 10
 
+[permalinks]
+  [permalinks.section]
+    artists = "/discography/artists/"
+    staff = "/discography/production-staff/"
+  # Taxonomy list permalinks removed to avoid conflict with section list at same URL.
+  # Without this, taxonomy list defaults to /artists/ and /staff/, while section list
+  # correctly uses /discography/artists/ with content from content/artists/_index.md
+  [permalinks.taxonomy]
+    # artists and staff omitted - use section list at /discography/artists/ etc.
+  [permalinks.term]
+    # Use param name when taxonomy has custom param (artists -> artist_slugs, staff -> staff_slugs)
+    artist_slugs = "/discography/artists/:slug/"
+    staff_slugs = "/discography/production-staff/:slug/"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+# Disable SVG minification to prevent inline SVG path data from being corrupted
+# (e.g. xmark icon showing as raw text at bottom of pages)
+[minify]
+  disableSVG = true

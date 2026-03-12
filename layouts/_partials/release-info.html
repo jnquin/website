@@ -1,0 +1,113 @@
+{{/* Release info table - artists, staff (slug/role/display), label (plaintext) */}}
+{{- $p := . }}
+{{- $rows := slice }}
+{{- if $p.Params.role }}
+  {{- $rows = $rows | append (dict "label" "Role" "value" $p.Params.role) }}
+{{- end }}
+{{- $artistCredits := $p.Params.artists }}
+{{- $staffCredits := $p.Params.staff }}
+{{- $artistTerms := $p.GetTerms "artists" }}
+{{- $staffTerms := $p.GetTerms "staff" }}
+{{- $artistTermMap := dict }}
+{{- $staffTermMap := dict }}
+{{- range $artistTerms }}
+  {{- $artistTermMap = merge $artistTermMap (dict (lower .Data.Term) .) }}
+{{- end }}
+{{- range $staffTerms }}
+  {{- $staffTermMap = merge $staffTermMap (dict (lower .Data.Term) .) }}
+{{- end }}
+{{- if $artistCredits }}
+  {{- $artistParts := slice }}
+  {{- range $artistCredits }}
+    {{- $slug := .slug }}
+    {{- $display := .display | default "" }}
+    {{- $role := .role | default "" }}
+    {{- $mode := lower (.mode | default "artist") }}
+    {{- $useStaff := eq $mode "staff" }}
+    {{- $noLink := eq (lower $slug) "none" }}
+    {{- $name := $display }}
+    {{- if not $noLink }}
+      {{- if not $name }}{{ with $p.Site.GetPage (cond $useStaff (printf "/staff/%s" $slug) (printf "/artists/%s" $slug)) }}{{ $name = .Params.title | default .Title }}{{ else }}{{ $name = $slug }}{{ end }}{{ end }}
+    {{- else }}
+      {{- if not $name }}{{ $name = "Unknown" }}{{ end }}
+    {{- end }}
+    {{- $html := "" }}
+    {{- if $noLink }}
+      {{- $html = $name }}
+    {{- else }}
+      {{- $term := index (cond $useStaff $staffTermMap $artistTermMap) (lower $slug) }}
+      {{- $link := "" }}
+      {{- if $term }}
+        {{- $link = $term.Permalink }}
+      {{- else }}
+        {{- $link = cond $useStaff (printf "/discography/production-staff/%s/" $slug) (printf "/discography/artists/%s/" $slug) }}
+      {{- end }}
+      {{- $html = printf "<a href=\"%s\">%s</a>" $link $name }}
+    {{- end }}
+    {{- if $role }}
+      {{- $html = printf "%s <span class=\"artist-role\">(%s)</span>" $html $role }}
+    {{- end }}
+    {{- $artistParts = $artistParts | append $html }}
+  {{- end }}
+  {{- $rows = $rows | append (dict "label" "Artists" "value" (delimit $artistParts "<br>") "safe" true) }}
+{{- end }}
+{{- if $staffCredits }}
+  {{- $staffParts := slice }}
+  {{- range $staffCredits }}
+    {{- $slug := .slug }}
+    {{- $display := .display | default "" }}
+    {{- $role := .role | default "" }}
+    {{- $mode := lower (.mode | default "staff") }}
+    {{- $useArtist := eq $mode "artist" }}
+    {{- $noLink := eq (lower $slug) "none" }}
+    {{- $name := $display }}
+    {{- if not $noLink }}
+      {{- if not $name }}{{ with $p.Site.GetPage (cond $useArtist (printf "/artists/%s" $slug) (printf "/staff/%s" $slug)) }}{{ $name = .Params.title | default .Title }}{{ else }}{{ $name = $slug }}{{ end }}{{ end }}
+    {{- else }}
+      {{- if not $name }}{{ $name = "Unknown" }}{{ end }}
+    {{- end }}
+    {{- $html := "" }}
+    {{- if $noLink }}
+      {{- $html = $name }}
+    {{- else }}
+      {{- $term := index (cond $useArtist $artistTermMap $staffTermMap) (lower $slug) }}
+      {{- $link := "" }}
+      {{- if $term }}
+        {{- $link = $term.Permalink }}
+      {{- else }}
+        {{- $link = cond $useArtist (printf "/discography/artists/%s/" $slug) (printf "/discography/production-staff/%s/" $slug) }}
+      {{- end }}
+      {{- $html = printf "<a href=\"%s\">%s</a>" $link $name }}
+    {{- end }}
+    {{- if $role }}
+      {{- $html = printf "%s <span class=\"artist-role\">(%s)</span>" $html $role }}
+    {{- end }}
+    {{- $staffParts = $staffParts | append $html }}
+  {{- end }}
+  {{- $rows = $rows | append (dict "label" "Production" "value" (delimit $staffParts "<br>") "safe" true) }}
+{{- end }}
+{{- if $p.Params.venue }}
+  {{- $rows = $rows | append (dict "label" "Venue" "value" $p.Params.venue) }}
+{{- end }}
+{{- if $p.Params.label }}
+  {{- $rows = $rows | append (dict "label" "Label" "value" $p.Params.label) }}
+{{- end }}
+{{- if $p.Params.catalogue_number }}
+  {{- $rows = $rows | append (dict "label" "Catalogue number" "value" $p.Params.catalogue_number) }}
+{{- end }}
+{{- if gt (len $rows) 0 }}
+<div class="release-info-table">
+  <table>
+    <tbody>
+      {{- range $rows }}
+      <tr>
+        <td class="release-info-label">{{ .label }}</td>
+        <td class="release-info-value">
+          {{- if .safe }}{{ .value | safeHTML }}{{ else }}{{ .value }}{{ end -}}
+        </td>
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>
+{{- end }}

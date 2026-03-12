@@ -1,0 +1,97 @@
+{{ define "main" }}
+  {{- $displayTitle := .Title -}}
+  {{- $contentSection := "artists" -}}
+  {{- $browseCurrent := "artists" -}}
+  {{- if hasPrefix .RelPermalink "/discography/production-staff/" }}{{ $contentSection = "staff" }}{{ $browseCurrent = "staff" }}{{ end -}}
+  {{- with .Site.GetPage (printf "/%s/%s" $contentSection .Data.Term) -}}
+    {{- $displayTitle = .Params.title | default .Title -}}
+  {{- end -}}
+  {{ partial "discography-header.html" (dict "current" $browseCurrent "pageTitle" (cond (eq $browseCurrent "staff") "Production Staff" "Artists") "context" . "showBreadcrumbs" (or .Params.showBreadcrumbs .Site.Params.list.showBreadcrumbs)) }}
+  {{ if eq $browseCurrent "staff" }}
+  <a href="/discography/production-staff/" class="discography-back-link">← All Production Staff</a>
+  {{ else }}
+  <a href="/discography/artists/" class="discography-back-link">← All Artists</a>
+  {{ end }}
+  {{- $contentPage := .Site.GetPage (printf "/%s/%s" $contentSection .Data.Term) -}}
+  {{- $profileImg := "" -}}
+  {{- $bannerImg := "" -}}
+  {{- with $contentPage -}}
+    {{- $profileImg = .Resources.GetMatch "*profile*" -}}
+    {{- $bannerImg = .Resources.GetMatch "*banner*" -}}
+    {{- if not $profileImg }}{{ with .Params.image }}{{ if hasPrefix . "http" }}{{ $profileImg = . }}{{ else if ($contentPage.Resources.GetMatch .) }}{{ $profileImg = ($contentPage.Resources.GetMatch .) }}{{ else }}{{ $profileImg = . }}{{ end }}{{ end }}{{ end -}}
+  {{- end -}}
+  <article class="profile-card {{ if $bannerImg }}profile-card--with-banner{{ end }}">
+    {{ with $bannerImg }}
+    <div class="profile-banner">
+      {{ if eq .MediaType.SubType "svg" }}
+      <img src="{{ .Permalink }}" alt="" role="presentation" />
+      {{ else }}
+      <img src="{{ (.Fill "1200x400 Center").Permalink }}" alt="" role="presentation" />
+      {{ end }}
+    </div>
+    {{ end }}
+    <div class="profile-body">
+      <div class="profile-main">
+        {{ $avatarSrc := "" }}
+        {{ with $profileImg }}
+          {{ if .MediaType }}
+            {{ if eq .MediaType.SubType "svg" }}
+              {{ $avatarSrc = .Permalink }}
+            {{ else }}
+              {{ $avatarSrc = (.Fill "256x256 Center").Permalink }}
+            {{ end }}
+          {{ else }}
+            {{ $avatarSrc = . }}
+          {{ end }}
+        {{ end }}
+        {{ with $avatarSrc }}
+        <div class="profile-avatar">
+          <img src="{{ . }}" alt="{{ $displayTitle }}" width="128" height="128" />
+        </div>
+        {{ end }}
+        <div class="profile-info">
+          <h1 class="profile-name">{{ $displayTitle }}</h1>
+          {{ with $contentPage.Params.role }}
+          <p class="profile-role">{{ . }}</p>
+          {{ end }}
+          {{ with $contentPage.Params.website }}
+          <p class="profile-website">
+            <a href="{{ . }}" target="_blank" rel="external" class="text-primary-600 dark:text-primary-400 hover:underline">
+              {{ if $contentPage.Params.website_label }}{{ $contentPage.Params.website_label }}{{ else }}Website{{ end }} ↗
+            </a>
+          </p>
+          {{ end }}
+          {{ with $contentPage.Params.description }}
+          <p class="profile-description">{{ . | markdownify }}</p>
+          {{ end }}
+          {{ with $contentPage.Content }}
+          <section class="prose mt-4 dark:prose-invert profile-bio">
+            {{ . | emojify }}
+          </section>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </article>
+  {{ if .Data.Pages }}
+    {{ $pageGroups := .Pages.GroupByDate "2006" }}
+    {{/* Discography-style grid for artist/composer/label/staff terms */}}
+    <section class="mt-8">
+      {{ range $pageGroups }}
+        <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">{{ .Key }}</h2>
+        <hr class="w-36 border-dotted border-neutral-400" />
+        <div class="discography-grid mt-6">
+          {{ range .Pages }}
+            {{ partial "discography-card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+  {{ else }}
+    <section class="prose mt-10 dark:prose-invert">
+      <p class="border-t py-8">
+        <em>{{ i18n "list.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}
+{{ end }}

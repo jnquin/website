@@ -1,0 +1,36 @@
+{{/* Links from spotify param and links array (type: spotify|apple|bandcamp|youtube|web) */}}
+{{- $p := . }}
+<div class="release-links">
+  {{- with $p.Params.spotify }}
+  <a href="https://open.spotify.com/{{ default "album" .type }}/{{ .id }}" target="_blank" rel="external">
+    {{ partial "icon.html" "spotify" }}
+    <span class="release-link-icon-spacer">Listen on Spotify</span>
+  </a>
+  {{- end }}
+  {{- with $p.Params.links }}
+  {{- range . }}
+    {{- $icon := "globe" }}
+    {{- $label := "" }}
+    {{- $href := .href }}
+    {{- if eq .type "apple" }}
+      {{- $icon = "apple" }}
+      {{- $label = "Listen on Apple Music" }}
+    {{- else if eq .type "bandcamp" }}
+      {{- $icon = "bandcamp" }}
+      {{- $label = "Listen on Bandcamp" }}
+    {{- else if eq .type "youtube" }}
+      {{- $icon = "youtube" }}
+      {{- $label = "Watch on YouTube" }}
+    {{- else if eq .type "web" }}
+      {{- $icon = "globe" }}
+      {{- $label = .display | default "Website" }}
+    {{- end }}
+    {{- if and $label $href }}
+  <a href="{{ $href }}" target="_blank" rel="external">
+    {{ partial "icon.html" $icon }}
+    <span class="release-link-icon-spacer">{{ $label }}</span>
+  </a>
+    {{- end }}
+  {{- end }}
+  {{- end }}
+</div>

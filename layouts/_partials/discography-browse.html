@@ -1,0 +1,20 @@
+{{/* current: "releases" | "artists" | "staff" - which item is active (not linked, white text) */}}
+<nav class="discography-browse" aria-label="Browse discography">
+  {{ if eq . "releases" }}
+    <span class="discography-browse-active">Releases</span>
+  {{ else }}
+    <a href="/discography/">Releases</a>
+  {{ end }}
+  <span class="discography-browse-sep">·</span>
+  {{ if eq . "artists" }}
+    <span class="discography-browse-active">Artists</span>
+  {{ else }}
+    <a href="/discography/artists/">Artists</a>
+  {{ end }}
+  <span class="discography-browse-sep">·</span>
+  {{ if eq . "staff" }}
+    <span class="discography-browse-active">Production Staff</span>
+  {{ else }}
+    <a href="/discography/production-staff/">Production Staff</a>
+  {{ end }}
+</nav>

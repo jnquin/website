@@ -1,0 +1,32 @@
+{{ define "main" }}
+  {{ partial "discography-header.html" (dict "current" "staff" "pageTitle" "Production Staff" "context" . "showBreadcrumbs" (or .Params.showBreadcrumbs .Site.Params.list.showBreadcrumbs)) }}
+  <div class="discography-header-content">
+    <div class="min-w-0">
+      {{ with .Content }}
+        <section class="prose mt-4 dark:prose-invert">
+          {{ . | emojify }}
+        </section>
+      {{ end }}
+    </div>
+  </div>
+  <hr class="discography-list-divider" />
+  {{ $tax := index .Site.Taxonomies "staff_slugs" }}
+  {{ if $tax }}
+    <section class="mt-8">
+      <ul class="list-none p-0 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ range $tax.Alphabetical }}
+          {{- $contentPage := $.Site.GetPage (printf "/staff/%s" .Page.Data.Term) -}}
+          <li>
+            {{ partial "profile-list-card.html" (dict "termPage" .Page "contentPage" $contentPage "count" .Count) }}
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ else }}
+    <section class="prose mt-10 dark:prose-invert">
+      <p class="border-t py-8">
+        <em>{{ i18n "list.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}
+{{ end }}

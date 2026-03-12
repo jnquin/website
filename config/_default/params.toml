@@ -11,7 +11,7 @@ autoSwitchAppearance = true
 
 defaultThemeColor = "#FFFFFF"
 
-enableSearch = true
+enableSearch = false
 enableCodeCopy = true
 enableImageLazyLoading = true
 enableImageWebp = true

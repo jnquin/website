@@ -1,0 +1,4 @@
+# Custom i18n overrides and additions
+list:
+  view_grid: "Grid"
+  view_list: "List"

@@ -1,0 +1,6 @@
+---
+title: "Dominika Mak"
+role: "Pianist"
+website: "https://www.dominikamak.com/"
+---
+Dominika Mak is a classical pianist, born in Poland. Dominika is currently completing a Professional Diploma at the Royal Academy of Music under the tutelage of Christopher Elton and David Gray. While completing her BA (2022) and MPhil (2023) in Music at Trinity College, Cambridge, Dominika was a Trinity College Choir choral scholar, Artistic Director of Trinity College Music Society, an avid chamber musician, and a solo pianist. In the past, Dominika has worked with Pascal Nemirovski at Royal Birmingham Conservatoire, and Graham Caskie at Chethams’ School of Music. During her undergraduate studies, Dominika was a laureate of various competitions, including the National EPTA Competition (2019), the Edith Leigh Prize (2022), and the Arthur Bliss Lieder Scheme (2021). Dominika has given performances at St John’s Smith Square, St Martin-in-the-Fields, and West Road Concert Hall in Cambridge. Dominika has benefitted from masterclasses from Yevgeny Subdin, Ann Queffélec, Wojciech Świtała, Stephen Hough, and other esteemed pianists. Dominika benefits from the Help Musicians Myra Hess Award for the year 2024-2025, and the OxCamb Music Prize. She is currently writing a play as part of a wider project involving the Preludes Op. 28.

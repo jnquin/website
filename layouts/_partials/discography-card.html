@@ -1,0 +1,44 @@
+{{/* Discography grid card: 1:1 cover or title fallback, lazy-loaded */}}
+{{- $images := .Resources.ByType "image" }}
+{{- $cover := $images.GetMatch (.Params.thumbnail | default "*cover*") }}
+{{- $url := cond (isset .Params "externalUrl") .Params.externalUrl .Permalink }}
+<a
+  href="{{ $url }}"
+  class="discography-card"
+  aria-label="{{ .Title | emojify }}"
+>
+  <div class="discography-card-cover">
+      {{- if $cover }}
+      <img
+        alt="{{ .Params.featureAlt | default .Params.thumbnailAlt | default .Title }}"
+        {{ if eq $cover.MediaType.SubType "svg" }}
+          class="discography-card-img"
+          src="{{ $cover.Permalink }}"
+        {{ else }}
+          class="discography-card-img"
+          srcset="{{ ($cover.Fit "400x400").Permalink }} 400w, {{ ($cover.Fit "800x800").Permalink }} 800w"
+          src="{{ ($cover.Fit "400x400").Permalink }}"
+          width="400"
+          height="400"
+        {{ end }}
+        loading="lazy"
+      />
+      {{- else }}
+      {{/* Fallback: square with title when no cover */}}
+      <div class="discography-card-fallback">
+        <span class="discography-card-fallback-text">
+          {{ .Title | emojify }}
+        </span>
+      </div>
+    {{- end }}
+  </div>
+  <div class="discography-card-info">
+    <span class="discography-card-number">{{ partial "release-number.html" . }}</span>
+    <span class="discography-card-title">
+      {{ .Title | emojify }}
+    </span>
+    <div class="discography-card-meta">
+      {{ partial "release-meta.html" . }}
+    </div>
+  </div>
+</a>

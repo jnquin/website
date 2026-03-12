@@ -1,0 +1,13 @@
+{{/* Chronological release number #JQ-#### */}}
+{{- $sorted := sort (where .Site.RegularPages "Type" "discography") ".Date" }}
+{{- $scratch := newScratch }}
+{{- $scratch.Set "idx" 0 }}
+{{- range $i, $p := $sorted }}
+  {{- if eq $p.RelPermalink $.RelPermalink }}
+    {{- $scratch.Set "idx" (add $i 1) }}
+  {{- end }}
+{{- end }}
+{{- $idx := $scratch.Get "idx" }}
+{{- if $idx }}
+<span class="release-number">#JQ-{{ printf "%04d" $idx }}</span>
+{{- end }}

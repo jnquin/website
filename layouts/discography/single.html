@@ -1,0 +1,67 @@
+{{ define "main" }}
+  {{- $images := .Resources.ByType "image" }}
+  {{- $cover := $images.GetMatch (.Params.thumbnail | default "*cover*") }}
+  {{- $cover = $cover | default ($images.GetMatch "*cover*") }}
+  <article class="release-single">
+    {{ partial "discography-header.html" (dict "current" "releases" "pageTitle" "Releases" "context" . "showBreadcrumbs" (or .Params.showBreadcrumbs .Site.Params.list.showBreadcrumbs)) }}
+    <a href="/discography/" class="discography-back-link">← All Releases</a>
+    <div class="release-layout">
+      <div class="release-main">
+        <header class="release-header">
+          <p class="release-number-wrap">{{ partial "release-number.html" . }}</p>
+          <h1 class="release-title">{{ .Title | emojify }}</h1>
+          {{ if .Date }}
+          <p class="release-date">{{ .Date.Format "2 January 2006" }}</p>
+          {{ end }}
+          {{ partial "release-info.html" . }}
+        </header>
+        <section class="release-content prose dark:prose-invert">
+          {{ .Content | emojify }}
+        </section>
+        {{- $ytLinks := where .Params.links "type" "youtube" }}
+        {{- if or .Params.spotify (gt (len $ytLinks) 0) }}
+        <section class="release-embeds">
+          {{- with .Params.spotify }}
+          {{- $spotifyHeight := cond (eq .type "track") "152" "380" }}
+          <div class="release-spotify">
+            <iframe src="https://open.spotify.com/embed/{{ default "album" .type }}/{{ .id }}" width="100%" height="{{ $spotifyHeight }}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+          {{- end }}
+          {{- range .Params.links }}
+          {{- if and (eq .type "youtube") (or .id .href) }}
+          <div class="release-youtube">
+            {{- $vid := .id }}
+            {{- if not $vid }}
+              {{- $vid = replaceRE `.*(?:youtube\.com/watch\?v=|youtu\.be/)([^&?]+).*` "$1" .href }}
+            {{- end }}
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+              <iframe src="https://www.youtube.com/embed/{{ $vid }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube video"></iframe>
+            </div>
+          </div>
+          {{- end }}
+          {{- end }}
+        </section>
+        {{- end }}
+        <footer class="release-footer">
+          {{ partial "article-pagination.html" . }}
+        </footer>
+      </div>
+      <aside class="release-sidebar">
+        {{- if $cover }}
+        <div class="release-cover">
+          {{- if eq $cover.MediaType.SubType "svg" }}
+          <img src="{{ $cover.Permalink }}" alt="{{ .Title }}" width="400" height="400" loading="eager" />
+          {{- else }}
+          <img src="{{ ($cover.Fit "400x400").Permalink }}" alt="{{ .Title }}" width="400" height="400" loading="eager" />
+          {{- end }}
+        </div>
+        {{- else }}
+        <div class="release-cover release-cover-placeholder">
+          <span>{{ .Title }}</span>
+        </div>
+        {{- end }}
+        {{ partial "release-links.html" . }}
+      </aside>
+    </div>
+  </article>
+{{ end }}

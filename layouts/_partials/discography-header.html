@@ -1,0 +1,13 @@
+{{/* dict "current" "releases"|"artists"|"staff" "pageTitle" "Releases"|"Artists"|"Production Staff" "context" . "showBreadcrumbs" bool */}}
+<header class="discography-header">
+  {{ if .showBreadcrumbs }}
+    {{ partial "breadcrumbs.html" .context }}
+  {{ end }}
+  <div class="discography-header-row">
+    <div class="discography-header-titles">
+      <p class="discography-section-label">Discography</p>
+      <h1 class="discography-page-title">{{ .pageTitle }}</h1>
+    </div>
+    {{ partial "discography-browse.html" .current }}
+  </div>
+</header>

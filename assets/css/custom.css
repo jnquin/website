@@ -151,3 +151,638 @@ form.contact-form .form-status:is(.dark *) {
 form.contact-form .form-status:empty {
   display: none;
 }
+
+/* Discography header - title left, browse links right */
+.discography-header {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.discography-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+.discography-back-link:hover {
+  text-decoration: underline;
+}
+.dark .discography-back-link {
+  color: rgb(var(--color-primary-400));
+}
+.discography-header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.discography-header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.discography-section-label {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-neutral-500));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.dark .discography-section-label {
+  color: rgb(var(--color-neutral-400));
+}
+.discography-page-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: rgb(var(--color-neutral-900));
+}
+.dark .discography-page-title {
+  color: rgb(var(--color-neutral));
+}
+.discography-header-content {
+  margin-bottom: 1.5rem;
+}
+.discography-list-divider {
+  margin: 0 0 1.5rem;
+  border: none;
+  border-top: 1px solid rgb(var(--color-neutral-200));
+}
+.dark .discography-list-divider {
+  border-top-color: rgb(var(--color-neutral-700));
+}
+
+/* Discography browse by */
+.discography-browse {
+  font-size: 0.875rem;
+}
+.discography-browse a {
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+.discography-browse a:hover {
+  text-decoration: underline;
+}
+.dark .discography-browse a {
+  color: rgb(var(--color-primary-400));
+}
+.discography-browse-sep {
+  margin: 0 0.5rem;
+  color: rgb(var(--color-neutral-400));
+}
+/* Active browse item - white (dark) / dark (light), not linked */
+.discography-browse-active {
+  color: rgb(var(--color-neutral-900));
+  pointer-events: none;
+  cursor: default;
+}
+.dark .discography-browse-active {
+  color: #fff;
+}
+
+/* Discography year jump links - like TOC */
+.discography-year-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 0;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  background: rgb(var(--color-neutral));
+  border-bottom: 1px solid rgb(var(--color-neutral-200));
+}
+.discography-year-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.dark .discography-year-nav {
+  background: rgb(var(--color-neutral-800));
+  border-bottom-color: rgb(var(--color-neutral-700));
+}
+.discography-year-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+.discography-year-link:hover {
+  color: rgb(var(--color-primary-500));
+  text-decoration: underline;
+}
+.dark .discography-year-link {
+  color: rgb(var(--color-primary-400));
+}
+.dark .discography-year-link:hover {
+  color: rgb(var(--color-primary-300));
+}
+/* Active year - white (dark) / dark (light), not linked */
+.discography-year-active {
+  color: rgb(var(--color-neutral-900));
+  pointer-events: none;
+  cursor: default;
+}
+.dark .discography-year-active {
+  color: #fff;
+}
+
+/* Year headings - scroll-margin so anchor doesn't hide under sticky nav */
+.discography-year-heading {
+  scroll-margin-top: 4rem;
+}
+
+/* Discography grid - CSS Grid (Tailwind purges custom layout classes) */
+.discography-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .discography-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Discography card */
+.discography-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--color-neutral-200));
+  background: rgb(var(--color-neutral-100));
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+.dark .discography-card {
+  border-color: rgb(var(--color-neutral-700));
+  background: rgb(var(--color-neutral-800));
+}
+.discography-card:hover {
+  border-color: rgb(var(--color-primary-400));
+}
+.discography-card-cover {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+}
+.discography-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+.discography-card:hover .discography-card-img {
+  transform: scale(1.05);
+}
+.discography-card-fallback {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+.discography-card-fallback-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-neutral-600));
+}
+.dark .discography-card-fallback-text {
+  color: rgb(var(--color-neutral-400));
+}
+.discography-card:hover .discography-card-fallback-text {
+  color: rgb(var(--color-neutral-800));
+}
+.dark .discography-card:hover .discography-card-fallback-text {
+  color: rgb(var(--color-neutral-200));
+}
+.discography-card-info {
+  padding: 0.75rem;
+}
+.discography-card-number {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary-600));
+  margin-bottom: 0.125rem;
+}
+.dark .discography-card-number {
+  color: rgb(var(--color-primary-400));
+}
+.discography-card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-neutral-800));
+}
+.dark .discography-card-title {
+  color: rgb(var(--color-neutral-200));
+}
+.discography-card:hover .discography-card-title {
+  text-decoration: underline;
+}
+.discography-card-meta {
+  margin-top: 0.125rem;
+  font-size: 0.75rem;
+  color: rgb(var(--color-neutral-500));
+}
+.dark .discography-card-meta {
+  color: rgb(var(--color-neutral-400));
+}
+
+/* --- Profile card (artist/staff) - social profile style --- */
+.profile-card {
+  margin-top: 1.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgb(var(--color-neutral-200));
+  background: rgb(var(--color-neutral));
+}
+.dark .profile-card {
+  border-color: rgb(var(--color-neutral-700));
+  background: rgb(var(--color-neutral-800));
+}
+.profile-banner {
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+  background: rgb(var(--color-neutral-200));
+}
+.dark .profile-banner {
+  background: rgb(var(--color-neutral-700));
+}
+.profile-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-body {
+  padding: 1.5rem;
+}
+.profile-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.profile-card--with-banner .profile-avatar {
+  margin-top: -4rem;
+}
+.profile-avatar {
+  flex-shrink: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgb(var(--color-neutral));
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+.dark .profile-avatar {
+  border-color: rgb(var(--color-neutral-800));
+}
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-info {
+  min-width: 0;
+  flex: 1;
+}
+.profile-name {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: rgb(var(--color-neutral-900));
+}
+.dark .profile-name {
+  color: rgb(var(--color-neutral));
+}
+.profile-role {
+  margin: 0.25rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgb(var(--color-primary-600));
+}
+.dark .profile-role {
+  color: rgb(var(--color-primary-400));
+}
+.profile-website {
+  margin: 0.5rem 0 0;
+}
+.profile-description {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  color: rgb(var(--color-neutral-600));
+}
+.dark .profile-description {
+  color: rgb(var(--color-neutral-400));
+}
+.profile-bio {
+  margin-top: 1rem;
+}
+.profile-bio.prose {
+  max-width: 100%;
+}
+
+/* Profile list card (artists/staff index) */
+.profile-list-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--color-neutral-200));
+  transition: border-color 0.15s, background-color 0.15s;
+  text-decoration: none;
+}
+.profile-list-card:hover {
+  border-color: rgb(var(--color-primary-500));
+  background: rgb(var(--color-neutral-50));
+}
+.dark .profile-list-card {
+  border-color: rgb(var(--color-neutral-700));
+}
+.dark .profile-list-card:hover {
+  border-color: rgb(var(--color-primary-500));
+  background: rgb(var(--color-neutral-800));
+}
+.profile-list-avatar {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgb(var(--color-neutral-200));
+}
+.dark .profile-list-avatar {
+  background: rgb(var(--color-neutral-600));
+}
+.profile-list-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-list-info {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
+}
+.profile-list-name {
+  font-weight: 600;
+  color: rgb(var(--color-neutral-900));
+}
+.dark .profile-list-name {
+  color: rgb(var(--color-neutral));
+}
+.profile-list-role {
+  font-size: 0.8125rem;
+  color: rgb(var(--color-primary-600));
+}
+.dark .profile-list-role {
+  color: rgb(var(--color-primary-400));
+}
+.profile-list-count {
+  font-size: 0.8125rem;
+  color: rgb(var(--color-neutral-500));
+}
+.dark .profile-list-count {
+  color: rgb(var(--color-neutral-400));
+}
+
+/* --- Release single page --- */
+.release-single {
+  max-width: 80rem;
+}
+.release-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+.release-back:hover {
+  text-decoration: underline;
+}
+.dark .release-back {
+  color: rgb(var(--color-primary-400));
+}
+.release-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+@media (max-width: 767px) {
+  .release-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.release-main {
+  min-width: 0;
+}
+.release-sidebar {
+  position: sticky;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.release-cover {
+  flex-shrink: 0;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.release-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.release-cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(var(--color-neutral-200));
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-neutral-600));
+}
+.dark .release-cover-placeholder {
+  background: rgb(var(--color-neutral-700));
+  color: rgb(var(--color-neutral-400));
+}
+.release-meta {
+  flex: 1;
+  min-width: 0;
+}
+.release-number-wrap {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary-600));
+}
+.dark .release-number-wrap {
+  color: rgb(var(--color-primary-400));
+}
+.release-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.release-date {
+  margin: 0 0 1rem 0;
+  font-size: 0.9375rem;
+  color: rgb(var(--color-neutral-500));
+}
+.dark .release-date {
+  color: rgb(var(--color-neutral-400));
+}
+.release-info-table {
+  margin: 1rem 0;
+}
+.release-info-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.release-info-table td {
+  padding: 0.35rem 0;
+  vertical-align: top;
+  border-bottom: 1px solid rgb(var(--color-neutral-200));
+}
+.dark .release-info-table td {
+  border-bottom-color: rgb(var(--color-neutral-700));
+}
+.release-info-label {
+  width: 10rem;
+  font-weight: 500;
+  color: rgb(var(--color-neutral-600));
+}
+.dark .release-info-label {
+  color: rgb(var(--color-neutral-400));
+}
+.release-info-value {
+  color: rgb(var(--color-neutral-800));
+}
+.dark .release-info-value {
+  color: rgb(var(--color-neutral-200));
+}
+.release-info-value a {
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+.release-info-value a:hover {
+  color: rgb(var(--color-primary-500));
+  text-decoration: underline;
+}
+.release-info-value .artist-role {
+  font-weight: 400;
+  color: rgb(var(--color-neutral-500));
+}
+.dark .release-info-value .artist-role {
+  color: rgb(var(--color-neutral-400));
+}
+.dark .release-info-value a {
+  color: rgb(var(--color-primary-400));
+}
+.release-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.release-links a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+.release-links a:hover {
+  text-decoration: underline;
+}
+.dark .release-links a {
+  color: rgb(var(--color-primary-400));
+}
+.release-links .icon svg,
+.release-links .icon svg path {
+  fill: currentColor;
+}
+.release-link-icon-spacer {
+  margin-left: 0.375rem;
+}
+.release-content {
+  margin-top: 2rem;
+}
+.release-content.prose a {
+  text-decoration: none;
+}
+.release-content.prose a:hover {
+  text-decoration: underline;
+}
+.release-embeds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem !important;
+  margin-top: 2rem;
+}
+.release-embeds .release-spotify,
+.release-embeds .release-youtube {
+  margin: 0 !important;
+}
+.release-spotify iframe {
+  display: block;
+  vertical-align: top;
+}
+.release-spotify iframe,
+.release-youtube {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.release-footer {
+  margin-top: 2rem;
+}
+
+/* Discography view toggle - unpressed state */
+.discography-view-btn:not([aria-pressed="true"]) {
+  color: rgb(var(--color-neutral-600));
+}
+.discography-view-btn:not([aria-pressed="true"]):is(.dark *) {
+  color: rgb(var(--color-neutral-400));
+}
+.discography-view-btn:hover:not([aria-pressed="true"]) {
+  background: rgb(var(--color-neutral-200));
+  color: rgb(var(--color-neutral-800));
+}
+.discography-view-btn:hover:not([aria-pressed="true"]):is(.dark *) {
+  background: rgb(var(--color-neutral-700));
+  color: rgb(var(--color-neutral-200));
+}

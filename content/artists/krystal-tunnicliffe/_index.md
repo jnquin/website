@@ -1,0 +1,6 @@
+---
+title: "Krystal Tunnicliffe"
+role: "Pianist"
+website: "https://www.krystaltunnicliffe.com/"
+---
+British/Australian pianist Krystal Tunnicliffe enjoys a varied career as a collaborative pianist and music educator. With duo partner Siân Dicker, she has performed at the Oxford Song Festival, LIFE Victoria Festival (Barcelona), International Lied Festival (Zeist), Aldeburgh Festival, Ryedale Festival, on BBC Radio 3 ‘In Tune’, and they opened St John’s Smith Square’s 2020 Autumn Season. Their debut disc, ‘The Complete Songs of William Walton’, with Delphian Records, was released in October 2024 to critical acclaim. In 2019, she won the prize for the best accompanist in the heats at Melbourne National Liederfest, and with Harriet Burns she was a finalist at the Maureen Lehane Awards. Other recent highlights include performances with Brindley Sherratt and Nicky Spence as part of the Ludlow English Song Weekend and Ryedale Festival respectively. Krystal is a Samling Artist, Britten-Pears Young Artist, Ryedale Festival Young Artist, and an Oxford Song Young Artist. She is a staff pianist in the Junior department of the Guildhall School of Music and Drama, and the resident accompanist, and piano teacher, at Eton College.

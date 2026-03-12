@@ -1,0 +1,35 @@
+{{/* .termPage = taxonomy term page, .contentPage = artist/staff content page, .count = release count */}}
+{{- $displayName := .termPage.Title -}}
+{{- $contentPage := .contentPage -}}
+{{- with $contentPage }}{{ $displayName = .Params.title | default .Title }}{{ end -}}
+{{- $profileImg := "" -}}
+{{- with $contentPage -}}
+  {{- $profileImg = .Resources.GetMatch "*profile*" -}}
+  {{- if not $profileImg }}{{ with .Params.image }}{{ if hasPrefix . "http" }}{{ $profileImg = . }}{{ else if ($contentPage.Resources.GetMatch .) }}{{ $profileImg = ($contentPage.Resources.GetMatch .) }}{{ else }}{{ $profileImg = . }}{{ end }}{{ end }}{{ end -}}
+{{- end -}}
+<a href="{{ .termPage.Permalink }}" class="profile-list-card">
+  {{ $avatarSrc := "" }}
+  {{ with $profileImg }}
+    {{ if .MediaType }}
+      {{ if eq .MediaType.SubType "svg" }}
+        {{ $avatarSrc = .Permalink }}
+      {{ else }}
+        {{ $avatarSrc = (.Fill "96x96 Center").Permalink }}
+      {{ end }}
+    {{ else }}
+      {{ $avatarSrc = . }}
+    {{ end }}
+  {{ end }}
+  {{ with $avatarSrc }}
+  <div class="profile-list-avatar">
+    <img src="{{ . }}" alt="" width="48" height="48" />
+  </div>
+  {{ end }}
+  <div class="profile-list-info">
+    <span class="profile-list-name">{{ $displayName }}</span>
+    {{ with $contentPage }}{{ with .Params.role }}
+    <span class="profile-list-role">{{ . }}</span>
+    {{ end }}{{ end }}
+    <span class="profile-list-count">({{ .count }} {{ if eq .count 1 }}release{{ else }}releases{{ end }})</span>
+  </div>
+</a>

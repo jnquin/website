@@ -1,0 +1,33 @@
+{{ define "main" }}
+  {{ partial "discography-header.html" (dict "current" "artists" "pageTitle" "Artists" "context" . "showBreadcrumbs" (or .Params.showBreadcrumbs .Site.Params.list.showBreadcrumbs)) }}
+  <div class="discography-header-content">
+    <div class="min-w-0">
+      {{/* Only show content when it's from the section _index (artists_list_intro param); avoids showing random artist bios when section/taxonomy permalink conflict causes wrong .Content */}}
+      {{ if and .Content .Params.artists_list_intro }}
+        <section class="prose mt-4 dark:prose-invert">
+          {{ .Content | emojify }}
+        </section>
+      {{ end }}
+    </div>
+  </div>
+  <hr class="discography-list-divider" />
+  {{ $tax := index .Site.Taxonomies "artist_slugs" }}
+  {{ if $tax }}
+    <section class="mt-8">
+      <ul class="list-none p-0 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ range $tax.Alphabetical }}
+          {{- $contentPage := $.Site.GetPage (printf "/artists/%s" .Page.Data.Term) -}}
+          <li>
+            {{ partial "profile-list-card.html" (dict "termPage" .Page "contentPage" $contentPage "count" .Count) }}
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ else }}
+    <section class="prose mt-10 dark:prose-invert">
+      <p class="border-t py-8">
+        <em>{{ i18n "list.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}
+{{ end }}
