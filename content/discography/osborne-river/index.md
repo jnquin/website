@@ -19,7 +19,7 @@ spotify:
   type: "album"
 links:
   - type: "apple"
-    href: "https://apple.com"
+    href: "https://music.apple.com/gb/album/1876373326"
   - type: "web"
     href: "https://go.endelium.com/River"
     display: "Other DSPs"

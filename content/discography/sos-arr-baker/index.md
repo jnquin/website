@@ -24,5 +24,8 @@ links:
   - type: "web"
     href: "https://www.nationalyouthchoir.org.uk/sos"
     display: "View on Label Website"
+  - type: "web"
+    href: "https://go.endelium.com/sos"
+    display: "Other DSPs"
 ---
 
