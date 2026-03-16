@@ -3,6 +3,7 @@ title: "Quartel: Grow"
 date: 2024-08-16
 role: Producer
 venue: Queen Margaret's School, Escrick
+label: National Youth Choir Recordings
 artists:
   - slug: "national-youth-choir"
     role: "Choir"

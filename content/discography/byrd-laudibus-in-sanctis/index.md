@@ -17,7 +17,7 @@ staff:
 staff_slugs: ["david-jones"]
 spotify:
   id: "4cwuhdDPqNZ8ZxAULdk6P8"
-  type: "album"
+  type: "track"
 links:
   - type: "apple"
     href: "https://music.apple.com/gb/album/byrd-laudibus-in-sanctis-single/1694289444"

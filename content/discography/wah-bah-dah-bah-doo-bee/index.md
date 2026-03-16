@@ -2,6 +2,8 @@
 title: Wah-Bah-Dah-Bah-Doo-Bee! (Live)
 date: 2025-07-18
 role: Producer & Engineer
+venue: Saffron Hall, Saffron Walden
+label: National Youth Choir Recordings
 artists:
   - slug: "national-youth-choir"
     role: "Choir"
@@ -11,7 +13,6 @@ artists:
   - slug: "joanna-tomlinson"
     role: "Conductor"
 artist_slugs: ["national-youth-choir", "charlie-penn", "joanna-tomlinson"]
-label: "National Youth Choir"
 spotify:
   id: "6S4wijPoXgQ47CqQlZqkKb"
   type: "track"

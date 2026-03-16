@@ -2,6 +2,8 @@
 title: "Parry: Dashing Through The Snow (Jingle Bells)"
 date: 2021-12-17
 role: Singer
+venue: Tudor Hall School, Banbury
+label: National Youth Choir Recordings
 artists:
   - slug: "national-youth-choir"
     role: "Choir"

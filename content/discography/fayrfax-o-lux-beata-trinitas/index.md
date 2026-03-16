@@ -2,7 +2,7 @@
 title: "Fayrfax: O lux, beata Trinitas (Live)"
 date: 2022-06-03
 role: Singer & Label Rep
-venue: Queen Margaret's School, Escrick
+venue: Worcester Cathedral, Worcester
 label: National Youth Choir Recordings
 artists:
   - slug: "national-youth-choir"

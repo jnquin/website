@@ -3,6 +3,7 @@ title: "The Swingles: Until It's Gone (Live)"
 date: 2023-06-16
 role: Singer & Label Rep
 venue: Woolwich Works, London
+label: National Youth Choir Recordings
 artists:
   - slug: "national-youth-choir"
     role: "Choir"

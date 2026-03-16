@@ -2,7 +2,7 @@
 title: "Feshareki: Otherworld (Live)"
 date: 2022-08-19
 role: Singer (Baritone Soloist) & Label Rep
-venue: Worcester Cathedral
+venue: Worcester Cathedral, Worcester
 label: National Youth Choir Recordings
 artists:
   - slug: "national-youth-choir"

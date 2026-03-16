@@ -5,7 +5,7 @@ role: Singer, Choral Arranger & Choir Director
 label: BMG
 artists:
   - slug: "primal-scream"
-    role: "Artist"
+    role: "Band"
 artist_slugs: ["primal-scream"]
 spotify:
   id: "69oeXCLAa7NA3CfrCRFHlT"
