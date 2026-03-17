@@ -13,6 +13,22 @@
           {{ if .Date }}
           <p class="release-date">{{ .Date.Format "2 January 2006" }}</p>
           {{ end }}
+          <div class="release-header-media">
+            {{- if $cover }}
+            <div class="release-cover release-cover-mobile">
+              {{- if eq $cover.MediaType.SubType "svg" }}
+              <img src="{{ $cover.Permalink }}" alt="{{ .Title }}" width="400" height="400" loading="eager" />
+              {{- else }}
+              <img src="{{ ($cover.Fit "400x400").Permalink }}" alt="{{ .Title }}" width="400" height="400" loading="eager" />
+              {{- end }}
+            </div>
+            {{- else }}
+            <div class="release-cover release-cover-placeholder release-cover-mobile">
+              <span>{{ .Title }}</span>
+            </div>
+            {{- end }}
+            {{ partial "release-links.html" . }}
+          </div>
           {{ partial "release-info.html" . }}
         </header>
         <section class="release-content prose dark:prose-invert">

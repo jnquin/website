@@ -597,6 +597,33 @@ form.contact-form .form-status:empty {
   .release-layout {
     grid-template-columns: 1fr;
   }
+  .release-sidebar {
+    display: none !important;
+  }
+}
+.release-header-media {
+  display: none;
+}
+@media (max-width: 767px) {
+  .release-header-media {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .release-cover-mobile {
+    width: 7rem;
+    height: 7rem;
+    min-width: 7rem;
+    min-height: 7rem;
+    flex-shrink: 0;
+  }
+  .release-header-media .release-links {
+    flex: 1;
+    justify-content: flex-start;
+  }
 }
 .release-main {
   min-width: 0;
